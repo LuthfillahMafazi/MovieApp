@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Movie App</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_toolbar">Toolbar Title</string>
+    <string name="movies_search">Search movies…</string>
+    <string name="title_featurefavorite">featureFavorite</string>
+    <string name="summary">Plot Summary</string>
+</resources>
