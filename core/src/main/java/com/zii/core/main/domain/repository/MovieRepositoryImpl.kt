@@ -1,21 +1,12 @@
 package com.zii.core.main.domain.repository
 
-import androidx.paging.Pager
-import androidx.paging.PagingConfig
-import androidx.paging.PagingData
-import androidx.paging.map
-import com.zii.core.main.data.remote.response.MovieResult
 import com.zii.core.main.data.remote.source.MovieRemoteDataSource
-import com.zii.core.main.data.remote.source.MoviesPagingSource
 import com.zii.core.main.domain.model.MovieModel
 import com.zii.core.main.enums.MovieType
-import com.zii.core.main.service.MovieService
 import com.zii.core.main.vo.Resource
 import com.zii.core.utils.DataMapper
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class MovieRepositoryImpl @Inject constructor(

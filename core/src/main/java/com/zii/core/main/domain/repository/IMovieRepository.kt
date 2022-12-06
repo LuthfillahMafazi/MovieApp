@@ -1,7 +1,5 @@
 package com.zii.core.main.domain.repository
 
-import androidx.paging.PagingData
-import com.zii.core.main.data.remote.response.MovieResult
 import com.zii.core.main.domain.model.MovieModel
 import com.zii.core.main.enums.MovieType
 import com.zii.core.main.vo.Resource

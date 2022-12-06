@@ -1,14 +1,5 @@
 package com.zii.movieapp.presentation.home.adapter
 
-import androidx.paging.PagingSource
-import androidx.paging.PagingState
-import com.bumptech.glide.load.HttpException
-import com.zii.core.BuildConfig
-import com.zii.core.main.data.remote.response.MovieResult
-import com.zii.core.main.data.remote.response.MoviesResponse
-import com.zii.core.main.service.MovieService
-import java.io.IOException
-
 //class MoviesPagingSource(
 //    private val service: MovieService
 //) : PagingSource<Int, MovieResult>() {

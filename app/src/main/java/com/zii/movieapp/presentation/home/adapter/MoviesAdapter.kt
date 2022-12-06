@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.zii.core.main.domain.model.MovieModel
 import com.zii.movieapp.databinding.ItemGridHorizontalMovieBinding
 
-class MoviesAdapter() : ListAdapter<MovieModel, MoviesAdapter.ViewHolder>(diffCallback) {
+class MoviesAdapter : ListAdapter<MovieModel, MoviesAdapter.ViewHolder>(diffCallback) {
     private var onItemClicked: ((MovieModel?) -> Unit)? = null
 
     fun callbackClicked(callback: ((MovieModel?) -> Unit)) {

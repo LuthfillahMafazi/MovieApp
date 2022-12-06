@@ -1,12 +1,5 @@
 package com.zii.core.utils
 
-import android.content.Context
-import android.widget.ImageView
-import androidx.core.content.ContextCompat
-import androidx.swiperefreshlayout.widget.CircularProgressDrawable
-import com.bumptech.glide.Glide
-import com.zii.core.R
-
 //fun ImageView.loadImage(
 //    uri: String?,
 //    cornerRadius: Int = 1,

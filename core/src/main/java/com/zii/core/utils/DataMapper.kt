@@ -25,7 +25,7 @@ object DataMapper {
                     mapGenresIdsToGenre(it.genreIds)
                 )
             } ?: listOf()
-        } ?: run { listOf() }
+        }
     }
 
     fun mapMovieToDomain(data: MovieResult): MovieModel {
