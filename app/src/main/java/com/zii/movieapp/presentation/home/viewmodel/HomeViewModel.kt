@@ -18,7 +18,6 @@ class HomeViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _nowPlayingMovies = MutableStateFlow<Resource<List<MovieModel>>?>(null)
-    private val _nowMorePlayingMovies = MutableStateFlow<PagingData<MovieModel>?>(null)
     private val _topRatedMovies = MutableStateFlow<Resource<List<MovieModel>>?>(null)
     private val _upcomingMovies = MutableStateFlow<Resource<List<MovieModel>>?>(null)
 

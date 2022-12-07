@@ -31,13 +31,6 @@ class DetailMovieFragment : Fragment() {
 
     private var isFavorite = false
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-
-        }
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -82,8 +75,8 @@ class DetailMovieFragment : Fragment() {
                     viewModel.updateFavoriteMovie(isFavorite, movie)
                     isFavorite = !isFavorite
                     checkFavorite()
-                    if (isFavorite) Toast.makeText(requireContext(), "Success to add Favorite", Toast.LENGTH_SHORT).show()
-                    else Toast.makeText(requireContext(), "Remove from favorite", Toast.LENGTH_SHORT).show()
+                    if (isFavorite) Toast.makeText(requireContext(), getString(R.string.success_add_favorite), Toast.LENGTH_SHORT).show()
+                    else Toast.makeText(requireContext(), getString(R.string.remove_favorite), Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -118,5 +111,10 @@ class DetailMovieFragment : Fragment() {
             toolbar.tvTitle.text = args.movie?.title
             textViewContent.text = args.movie?.overview
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

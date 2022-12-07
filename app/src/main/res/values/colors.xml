@@ -9,8 +9,6 @@
     <color name="colorPrimaryDark">#1D1E1E</color>
     <color name="colorSecond">#F5C30F</color>
     <color name="colorSecondDark">#1E2634</color>
-    <color name="green">#00FF00</color>
-    <color name="red">#FF0000</color>
     <color name="pink">#FF8DA1</color>
 
     <!--    Shimmer-->

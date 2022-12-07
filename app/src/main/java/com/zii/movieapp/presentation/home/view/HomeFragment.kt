@@ -21,7 +21,6 @@ import com.zii.movieapp.presentation.adapter.BannerAdapter
 import com.zii.movieapp.presentation.home.adapter.MoviesAdapter
 import com.zii.movieapp.presentation.home.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import io.github.vejei.viewpagerindicator.indicator.CircleIndicator
 import java.util.concurrent.TimeUnit
 
 @AndroidEntryPoint
@@ -32,12 +31,6 @@ class HomeFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by viewModels()
     private val bannerAdapter by lazy { BannerAdapter() }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -111,17 +104,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupBannerAdapter(data: List<MovieModel>?) {
-        val numOfBanner = 5
         binding?.apply {
             banner.carouselBanner.apply {
                 adapter = bannerAdapter
                 start(5, TimeUnit.SECONDS)
 
-                indicatorBanner.let {
-                    it.setWithViewPager2(this.viewPager2, false)
-                    it.setAnimationMode(CircleIndicator.AnimationMode.SCALE)
-                    it.itemCount = numOfBanner
-                }
             bannerAdapter.setData(data?.take(5))
             }
         }
@@ -145,7 +132,7 @@ class HomeFragment : Fragment() {
 
     private fun initToolbar() {
         binding?.toolbar?.apply {
-            tvTitle.text = "Cover"
+            tvTitle.text = getString(R.string.cover)
             icBack.isGone
             icSearchToolbar.visibility = View.VISIBLE
             icFavoriteToolbar.visibility = View.VISIBLE
@@ -158,5 +145,10 @@ class HomeFragment : Fragment() {
                 findNavController().navigate(R.id.action_homeFragment_to_favoriteFragment)
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

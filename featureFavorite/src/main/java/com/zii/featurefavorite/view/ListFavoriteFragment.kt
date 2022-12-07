@@ -16,6 +16,7 @@ import com.zii.featurefavorite.databinding.FragmentListFavoriteBinding
 import com.zii.featurefavorite.di.DaggerFavoriteComponent
 import com.zii.featurefavorite.viewmodel.FavoriteViewModel
 import com.zii.featurefavorite.viewmodel.FavoriteViewModelFactory
+import com.zii.movieapp.R
 import com.zii.movieapp.module.FavoriteModuleDependencies
 import com.zii.movieapp.presentation.adapter.ListMovieAdapter
 import dagger.hilt.android.EntryPointAccessors
@@ -33,12 +34,6 @@ class ListFavoriteFragment : Fragment() {
         ListMovieAdapter(
             onItemClicked = { navigateToDetail(it) }
         ) }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-        }
-    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -97,8 +92,13 @@ class ListFavoriteFragment : Fragment() {
 
     private fun initToolbar() {
         binding?.apply {
-            tvTitle.text = "Favorite"
+            tvTitle.text = getString(R.string.favorite)
             icBack.setOnClickListener { findNavController().popBackStack() }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }
